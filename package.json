@@ -1,0 +1,22 @@
+{
+  "name": "github-heroku-travis-jest-app",
+  "version": "0.0.0",
+  "description": "github-heroku-travis-jest-app",
+  "main": "app.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "jest"
+  },
+  "author": {
+    "name": ""
+  },
+  "dependencies": {
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "nedb": "^1.8.0"
+  },
+  "devDependencies": {
+    "jest": "^25.1.0",
+    "supertest": "^4.0.2"
+  }
+}
