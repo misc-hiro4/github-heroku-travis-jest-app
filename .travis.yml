@@ -7,3 +7,10 @@ cache:
 branches:
   only:
   - master
+deploy:
+  provider: heroku
+  api_key:
+    secure: JUYL9WEzbQTZBiiHYwrsdaxoLIo6qvYMvqtLQ/b8LdrqgJ/p47dBlDbiUSj+xlYxj/OYbDoZfQvhnPZC0kjYC/mJ0/OriFqf/P9axdgt/+9MDnaD9L8QCUd0uYxgglbGJ3isFVnxgfcU5+B0+GFA/UyQMjNTfzn1Ye5n49RlhhD0UJWv039vvS3iZ5Iy6eOqmFgaU8KQBfgsRsJD28hE/HnM89qMRDIfeidOEfCV5ItM7rH7vSz5wGUE4edvNLqo9LwSTikfhGH4xNGDjDuEGxtIqymAp4AF7+nIbu4tGFaq4rB2TRf+IYwge77ZLmW3MRhV4bd0GIjOq+zFRF3LlAjSenhwlUnijJz5j+obrPxAhmtRMefCGg91/Dgyi/n+6aQZpu3JKEQ1RJAT6seLJ8gBnURuu0kudUKyF2nJcebpY7u/JuAqqWzaLFHVOyOGsl6rry1tuI2PUBRAlUdGZlSbm2yIaO+5zGY1LmsniQ8pzyFnPyDlnPga6NrOWpLU6nYAJbOg4Sek21B/ISxtSEbSZs5ziq3uPFT2FiJQMj0PhYK+CCMD/nPatHPYzhi7ANdE1/47OBKDTaOG3GiXQxMdvfTLJbQWIE2IV1kyTGqL/QxTdWWJ29c/UNRGe+BtrS7m0RXfShahf3PzVPhMpD2+ayr5gM7LngBdIAduU5w=
+  app: github-heroku-travis-jest-app
+  on:
+    repo: misc-hiro4/github-heroku-travis-jest-app
