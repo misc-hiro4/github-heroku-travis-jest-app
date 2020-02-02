@@ -31,13 +31,13 @@ https://travis-ci.org/misc-hiro4/github-heroku-travis-jest-app <br>
 ## ■利用しているパッケージ
 npmでインストールしているパッケージはこちら<br>
 #### ー 実行環境
---saveオプションでインストール、　package.jsonの"dependencies"キーに設定<br>
+--saveオプションでインストール（デフォルトなので指定しなくてもOK）、　package.jsonの"dependencies"キーに設定<br>
 
 |Express|EJS|NeDB|
 |:---:|:---:|:---:|
 
 #### ー 開発環境
---saveオプションでインストール、　package.jsonの"devDependencies"キーに設定<br>
+--save-devオプションでインストール、　package.jsonの"devDependencies"キーに設定<br>
 ローカルリポジトリでの確認、Travis CIでのテスト実行時に使う。<br>
 Herokuの本番環境では使わない。
 
