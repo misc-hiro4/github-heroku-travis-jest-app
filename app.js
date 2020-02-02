@@ -26,23 +26,29 @@ app.get('/', (req, res) => {
     res.render("index", { data: data } );
 });
 app.post('/', (req, res) => {
-    const doc = {
-        "name": req.body.name,
-        "age": req.body.age,
-        "gender": req.body.gender,
-        "tel": req.body.tel,
-        "zipcode": req.body.zipcode,
-        "address": req.body.address
-    };
+    if (req.body.cmd == "確定") {
+        const doc = {
+            "name": req.body.name,
+            "age": req.body.age,
+            "gender": req.body.gender,
+            "tel": req.body.tel,
+            "zipcode": req.body.zipcode,
+            "address": req.body.address
+        };
 
-    // 新規ドキュメントをデータベースに保存する
-    db.insert(doc, (error, newDoc) => {
-        if (error !== null) {
-            console.error(error);
-        }
-    });
+        // 新規ドキュメントをデータベースに保存する
+        db.insert(doc, (error, newDoc) => {
+            if (error !== null) {
+                console.error(error);
+            }
+        });
 
-    data.push(doc);
+        data.push(doc);
+    }
+    else {
+        db.remove({}, { multi: true });
+        data = [];
+    }
     res.render("index", { data: data } );
 });
 

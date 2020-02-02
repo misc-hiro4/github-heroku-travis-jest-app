@@ -3,53 +3,66 @@
 <head>
     <meta charset="utf-8" />
     <title>Page Title</title>
+    <style type="text/css">
+        table{
+            background-color:#fff;
+        }
+        th{
+            background-color:#aaa;
+        }
+    </style>
 </head>
 <body>
     <form method="POST" action="/">
-      <div>
-        <label for="name">氏名：</label>
-        <input type="text" name="name" value=""/>
-      </div>
-      <div>
-        <label for="age">年齢：</label>
-        <input type="text" name="age" value=""/>
-      </div>
-      <div>
-        <input type="radio" name="gender" value="Male"> 男
-        <input type="radio" name="gender" value="Female" checked> 女
-      </div>
-      <div>
-        <label for="tel">電話：</label>
-        <input type="text" name="tel" value="" />
-      </div>
-      <div>
-        <label for="zipcode">郵便番号：</label>
-        <input type="text" name="zipcode" value=""/>
-      </div>
-      <div>
-        <label for="address">住所：</label>
-        <input type="text" name="address" value=""/>
-      </div>
-      <div>
-        <input type="submit" value="確認" />
-      </div>
+      <table><tbody>
+      <tr>
+        <th><label for="name">氏名：</label></th>
+        <td><input type="text" name="name" value=""/></td>
+      </tr>
+      <tr>
+        <th><label for="age">年齢：</label></th>
+        <td><input type="text" name="age" value=""/></td>
+      </tr>
+      <tr>
+        <th><label for="name">性別：</label></th>
+        <td>
+          <input type="radio" name="gender" value="Male"> 男
+          <input type="radio" name="gender" value="Female" checked> 女
+        </td>
+      </tr>
+      <tr>
+        <th><label for="tel">電話：</label></th>
+        <td><input type="text" name="tel" value="" /></td>
+      </tr>
+      <tr>
+        <th><label for="zipcode">郵便番号：</label></th>
+        <td><input type="text" name="zipcode" value=""/></td>
+      </tr>
+      <tr>
+        <th><label for="address">住所：</label></th>
+        <td><input type="text" name="address" value=""/></td>
+      </tr>
+      </tbody></table>
+        <input type="submit" name="cmd" value="確定" />
+        <input type="submit" name="cmd" value="全件削除" />
     </form>
 <!--友達一覧-->
-<div id="contacts">
   <table>
+    <tr>
+      <th>名前</th><th>年齢</th><th>性別</th><th>電話</th><th>郵便番号</th><th>住所</th>
+    </tr>
     <!--繰り返して表示-->
     <% for(var i in data) { %>
       <% var obj = data[i]; %>
         <tr>
           <td><%= obj.name    %></td>
           <td><%= obj.age     %></td>
-          <td><%= obj.gender  %></td>
+          <td><%= (obj.gender == "Male" ? "男" : "女") %></td>
           <td><%= obj.tel     %></td>
           <td><%= obj.zipcode %></td>
           <td><%= obj.address %></td>
         </tr>
     <% } %>
   </table>
- </div>
 </body>
 </html>
