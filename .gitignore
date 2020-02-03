@@ -3,4 +3,3 @@ node_modules
 github-heroku-travis-jest-app.njsproj
 github-heroku-travis-jest-app.sln
 package-lock.json
-person.db
